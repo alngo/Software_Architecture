@@ -1,3 +1,5 @@
+https://www.educative.io/courses/web-application-software-architecture-101/
+
 # Software_Architecture
 
 Education repository.
@@ -106,3 +108,69 @@ Vertical scaling => improve power 16gb -> 32gb
 Horizontal scaling => add hardware
 
 Cloud computing
+
+Vertical scaling is simplier, is riskier since it has only one server
+Horizontal need stateless code (functionnal programming)
+-> microservice
+
+How much traffic?
+
+##### Bottleneck
+
+Bottleneck hurt scalability
+
+Database #
+Beware the monolith
+Scale database
+Make wise use of database partitioning, sharding, use multiple database servers to make the module efficient.
+
+Application Architecture #
+
+A poorly designed application’s architecture can become a major bottleneck as a whole.
+
+using asynchronous processes & modules where ever required rather all the processes are scheduled sequentially.
+
+Not Using Caching In the Application Wisely #
+
+Use caching exhaustively throughout the application to speed up things significantly.
+
+Inefficient Configuration & Setup of Load Balancers #
+
+Using too many or too few of them impacts the latency of our application.
+
+Adding Business Logic to the Database #
+Do not add business logic to the database
+Imagine when migrating to a different database, how much code refactoring it would require.
+
+Not Picking the Right Database #
+
+Picking the right database technology is vital for businesses.
+Need transactions & strong consistency? Pick a Relational Database.
+
+At the Code Level #
+
+Using unnecessary loops, nested loops.
+Writing tightly coupled code.
+Not paying attention to the Big-O complexity while writing the code. Be ready to do a lot of firefighting in production.
+In this lesson, if a few of the things are not clear to you such as Strong consistency, how message queue provides an asynchronous behaviour, how to pick the right database. I’ll discuss all that in the upcoming lessons, stay tuned.
+
+#### Tune/Test performance strategy
+
+Profiling
+[Performance analysis tool](https://en.wikipedia.org/wiki/List_of_performance_analysis_tools)
+Caching #
+Cache wisely. Cache everywhere. Cache all the static content. Hit the database only when it is really required. Try to serve all the read requests from the cache. Use a write-through cache.
+CDN (Content Delivery Network) #
+Use a CDN. Using a CDN further reduces the latency of the application due to the proximity of the data from the requesting user.
+
+During the scalability testing, different system parameters are taken into account such as the CPU usage, network bandwidth consumption, throughput, the number of requests processed within a stipulated time, latency, memory usage of the program, end-user experience when the system is under heavy load etc.
+
+Several load & stress tests are run on the application. Tools like JMeter are pretty popular for running concurrent user test on the application if you are working on a Java ecosystem. There are a lot of cloud-based testing tools available that help us simulate tests scenarios just with a few mouse clicks.
+
+Businesses test for scalability all the time to get their systems ready to handle the traffic surge. If it’s a sports website it would prepare itself for the sports event day, if it’s an e-commerce website it would make itself ready for the festival season.
+
+Read how production engineers support global events on Facebook.
+
+Also, how Hotstar a video streaming service scaled with over 10 million concurrent users
+
+In the industry tech like Cadvisor, Prometheus and Grafana are pretty popular for tracking the system via web-based dashboards.
