@@ -54,13 +54,13 @@ Software architectural style for implementing web service
 
 #### HTTP Pull
 
-Client to Server
+Client to Server tech
 
-- AJAX => until TTL
+- AJAX => until TTL (Time To Live)
 
 #### HTTP Push
 
-Server to Client
+Server to Client tech
 
 - Ajax Long polling (poll the server every X unit of times until config)
 - Web Sockets =? bi-directional low latency
